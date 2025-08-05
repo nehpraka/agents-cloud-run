@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  agent:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      # FLASK_APP: app.main  # Not strictly needed with CMD in Dockerfile
+      # FLASK_ENV: development # For local development
+    volumes:
+      - ./app:/app # Mount the app directory for live code reloading during development (optional)
